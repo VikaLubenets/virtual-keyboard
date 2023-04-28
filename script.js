@@ -52,18 +52,18 @@ const KEYBOARD = [
 {key: 'б', keyCode: 188},
 {key: 'ю', keyCode: 190},
 {key: '.', keyCode: 191},
-{key: 'ArrowUp', keyCode: 38},
+{key: '&#8593;', keyCode: 38},
 {key: 'Shift', keyCode: 16},
 {key: 'Control', keyCode: 17},
 {key: 'Meta', keyCode: 91},
 {key: 'Alt', keyCode: 18},
-{key: 'Пробел', keyCode: 32},
+{key: ' ', keyCode: 32},
 {key: 'Alt', keyCode: 18},
 {key: 'PrtSc', keyCode: 44},
 {key: 'Control', keyCode: 17},
-{key: 'ArrowLeft', keyCode: 37},
-{key: 'ArrowDown', keyCode: 40},
-{key: 'ArrowRight', keyCode: 39},
+{key: '&#8592;', keyCode: 37},
+{key: '&#8595;', keyCode: 40},
+{key: '&#8594;', keyCode: 39},
 ];
 
 // document.onkeydown = function(e) {
@@ -79,10 +79,18 @@ const KEYBOARD = [
 function createKeyboard() {
     let result = "";
     for(let i = 0; i < KEYBOARD.length; i++){
-      if(i === 15 || i === 29 || i === 42 || i === 54){
+      if(i === 15 || i === 29 || i === 42 || i === 55){
         result += `<div class="clearfix"></div>`
       }
-      result += `<div class="key-item" data-code=${KEYBOARD[i].key}> ${String(KEYBOARD[i].key)} </div>`
+      if (i === 58){
+        result += `<div class="key-item key-item_space" data-code=${KEYBOARD[i].key}> ${String(KEYBOARD[i].key)} </div>`;
+      } else if (i === 54 || i === 42 || i === 41){
+        result += `<div class="key-item key-item_wide" data-code=${KEYBOARD[i].key}> ${String(KEYBOARD[i].key)} </div>`;
+      }
+      if (i !== 58 && i !== 54 & i !== 42 & i !== 41){
+        result += `<div class="key-item" data-code=${KEYBOARD[i].key}> ${String(KEYBOARD[i].key)} </div>`
+      }
+      
     };
     document.querySelector("body").innerHTML = `<div class="keyboard__wrapper" id="keyboard">${result}</div>`;
   
