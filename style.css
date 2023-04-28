@@ -16,7 +16,7 @@ body {
     flex-wrap: wrap;
     background-color: rgb(194, 149, 110);
     user-select: none;
-    transition: all 0.2s;
+    transition: all 0.4s;
     justify-content: center;
     align-items: center;
     align-content:center;
@@ -42,6 +42,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .key-item:hover{
