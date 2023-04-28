@@ -76,33 +76,45 @@ const KEYBOARD = [
 //   return keyboard;
 // };
 
-function createKeyboard(){
+function createKeyboard() {
     let result = "";
     for(let i = 0; i < KEYBOARD.length; i++){
-        result += `<div class="key-item" data-code=${KEYBOARD[i].key}> ${String(KEYBOARD[i].key)} </div>`
+      if(i === 15 || i === 29 || i === 42 || i === 54){
+        result += `<div class="clearfix"></div>`
+      }
+      result += `<div class="key-item" data-code=${KEYBOARD[i].key}> ${String(KEYBOARD[i].key)} </div>`
     };
     document.querySelector("body").innerHTML = `<div class="keyboard__wrapper" id="keyboard">${result}</div>`;
-
+  
     const keyboardKeys = document.querySelectorAll('.keyboard__wrapper .key-item');
     keyboardKeys.forEach(function(key) {
-        key.onclick = function(e){
-            keyboardKeys.forEach(function(elem) {
-                elem.classList.remove('active');
-            });
-            let code = key.getAttribute('data-code');
-            key.classList.add('active');
-            console.log(code);
-        }
+      key.onclick = function(e){
+        keyboardKeys.forEach(function(elem) {
+          elem.classList.remove('active');
+        });
+        let code = key.getAttribute('data-code');
+        key.classList.add('active');
+        console.log(code);
+      }
     });
-
+  
     document.onkeydown = function(e){
-        console.log(e.code);
-        console.log(e.key);
-        const activeKey = document.querySelector(`.keyboard__wrapper .key-item[data-code="${e.key}"]`);
-        if (activeKey) {
-            activeKey.classList.add('active');
-        }
+      console.log(e.code);
+      console.log(e.key);
+      const activeKey = document.querySelector(`.keyboard__wrapper .key-item[data-code="${e.key}"]`);
+      if (activeKey) {
+        activeKey.classList.add('active');
+      }
     };
-}
-
-createKeyboard();
+    
+    document.onkeyup = function(e) {
+      console.log(e.code);
+      console.log(e.key);
+      const activeKey = document.querySelector(`.keyboard__wrapper .key-item[data-code="${e.key}"]`);
+      if (activeKey) {
+        activeKey.classList.remove('active');
+      }
+    };
+  }
+  
+  createKeyboard();

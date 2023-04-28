@@ -8,7 +8,7 @@ body {
 }
 
 .keyboard__wrapper {
-    width: 90%;
+    width: 95%;
     height: 60%;
     border: 2px solid black;
     padding: 5px;
@@ -17,14 +17,23 @@ body {
     background-color: rgb(194, 149, 110);
     user-select: none;
     transition: all 0.2s;
+    justify-content: center;
+    align-items: center;
+    align-content:center;
+}
+
+.clearfix{
+    width: 100%;
+    clear: both;
+    height: 0;
 }
 
 .key-item{
-    min-width: 6%;
+    min-width: 4%;
     height: 8%;
     border: 1px solid black;
-    margin: 2px;
-    padding: 2px;
+    margin: 3px;
+    padding: 4px;
     background: rgba(248, 215, 186, 0.3);
     color: white;
     text-align: center;
