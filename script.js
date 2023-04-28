@@ -152,7 +152,9 @@ function createKeyboard() {
       }
       
     };
-    document.querySelector("body").innerHTML = `<div class="keyboard__wrapper" id="keyboard">${result}</div>`;
+    document.querySelector("body").innerHTML = `
+    <div class = "legend">Комбинация клавиш для переключения языка: Ctrl + Shift</div>
+    <div class="keyboard__wrapper" id="keyboard">${result}</div>`;
   
     const keyboardKeys = document.querySelectorAll('.keyboard__wrapper .key-item');
     
