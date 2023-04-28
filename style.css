@@ -6,6 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 20px;
 }
 
 .keyboard__wrapper {
@@ -64,11 +65,17 @@ body {
 }
 
 .legend{
-    margin: 7%;
     text-align: center;
     width: 40%;
     font-weight: bold;
     font-size: 20px;
+    margin-top: 20px;
+}
+
+.text{
+    width: 95%;
+    margin: 20px;
+    height: 20%;
 }
 
 @media only screen and (min-width: 1200px) {

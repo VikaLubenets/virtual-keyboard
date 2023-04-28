@@ -152,9 +152,8 @@ function createKeyboard() {
       }
       
     };
-    document.querySelector("body").innerHTML = `
-    <div class = "legend">Комбинация клавиш для переключения языка: Ctrl + Shift</div>
-    <div class="keyboard__wrapper" id="keyboard">${result}</div>`;
+
+    document.querySelector("body").innerHTML = `<div class="keyboard__wrapper" id="keyboard">${result}</div>`;
   
     const keyboardKeys = document.querySelectorAll('.keyboard__wrapper .key-item');
     
@@ -202,3 +201,16 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+function createTextarea (){
+    let text = document.createElement('textarea');
+    text.classList.add("text");
+    let body = document.querySelector("body");
+    let firstEl = document.querySelector(".keyboard__wrapper");
+    body.insertBefore(text, firstEl);
+    let shortcard = document.createElement("div");
+    shortcard.classList.add('legend');
+    shortcard.textContent = "Для переключения языка используйте Ctrl + Shift";
+    body.insertBefore(shortcard, text);
+}
+
+createTextarea ();
