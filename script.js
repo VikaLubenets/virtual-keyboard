@@ -171,11 +171,11 @@ function createKeyboard() {
       } else if (text.value.slice(-1) === ' ') {
         text.value += char;
       } else {
-        text.value += ` ${char}`;
+        text.value += `${char}`;
       }
-      if (e.keyCode === 13) { 
+      if (e.keyCode === 13) {
         text.value += '\n';
-      } else if (e.keyCode === 9) { 
+      } else if (e.keyCode === 9) {
         e.preventDefault();
         text.value += '\t';
       }
@@ -190,10 +190,10 @@ function createKeyboard() {
     const char = activeKey.textContent;
     const text = document.querySelector('.text');
     text.value += char;
-    if (event.keyCode === 13) { 
+    if (event.keyCode === 13) {
       text.value += '\n';
     }
-    if (event.keyCode === 9) { 
+    if (event.keyCode === 9) {
       event.preventDefault();
       text.value += '\t';
     }
