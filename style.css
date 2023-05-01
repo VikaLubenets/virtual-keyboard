@@ -7,16 +7,17 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 20px;
+    background-color: rgb(194, 149, 110);
 }
 
 .keyboard__wrapper {
     width: 95%;
     height: 60%;
-    border: 2px solid black;
+    border: 2px solid white;
     padding: 5px;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(194, 149, 110);
+    background-color: rgba(198, 131, 79, 0.3);
     user-select: none;
     transition: all 0.4s;
     justify-content: center;
@@ -33,7 +34,7 @@ body {
 .key-item{
     min-width: 4%;
     height: 8%;
-    border: 1px solid black;
+    border: 1px solid white;
     margin: 3px;
     padding: 4px;
     background: rgba(248, 215, 186, 0.3);
@@ -70,17 +71,30 @@ body {
     font-weight: bold;
     font-size: 20px;
     margin-top: 20px;
+    color: white;
 }
 
 .text{
     width: 95%;
     margin: 20px;
     height: 20%;
+    background-color: rgba(198, 131, 79, 0.3);
+    color: white;
+    border: 2px solid white;
+    font-size: 20px;
 }
 
 @media only screen and (min-width: 1200px) {
 
     .key-item{
+        font-size: 25px;
+    }
+
+    .text{
+        font-size: 25px;
+    }
+
+    .legend {
         font-size: 25px;
     }
 

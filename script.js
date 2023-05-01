@@ -55,7 +55,7 @@ const KEYBOARD__RUSSIAN = [
     {key: '&#8593;', keyCode: 38},
     {key: 'Shift', keyCode: 161},
     {key: 'Control', keyCode: 17},
-    {key: 'Meta', keyCode: 91},
+    {key: 'Win', keyCode: 91},
     {key: 'Alt', keyCode: 18},
     {key: ' ', keyCode: 32},
     {key: 'Alt', keyCode: 18},
@@ -123,7 +123,7 @@ const KEYBOARD__ENGLISH = [
     {key: '&#8593;', keyCode: 38},
     {key: 'Shift', keyCode: 161},
     {key: 'Control', keyCode: 17},
-    {key: 'Meta', keyCode: 91},
+    {key: 'Win', keyCode: 91},
     {key: 'Alt', keyCode: 18},
     {key: ' ', keyCode: 32},
     {key: 'Alt', keyCode: 18},
@@ -165,6 +165,17 @@ function createKeyboard() {
         let code = key.getAttribute('data-code');
         key.classList.add('active');
         console.log(code);
+        let char = key.textContent;
+        let text = document.querySelector(".text");
+        if (char === " ") {
+          text.value += char;
+        } else if (text.value.length === 0) {
+          text.value += char;
+        } else if (text.value.slice(-1) === " ") {
+          text.value += char;
+        } else {
+          text.value += " " + char;
+        }
       }
     });
 
@@ -173,6 +184,9 @@ function createKeyboard() {
         if (activeKey) {
           activeKey.classList.add('active');
         }
+        let char = key.textContent;
+        let text = document.querySelector(".text");
+        text.value+=char;
     });
     
     document.addEventListener('keyup', function(event) {
@@ -198,6 +212,7 @@ document.addEventListener('keydown', function(e) {
     if (e.ctrlKey && e.shiftKey) {
       toggleKeyboardLanguage();
       createKeyboard();
+      createTextarea ();
     }
 });
 
