@@ -176,6 +176,13 @@ function createKeyboard() {
         } else {
           text.value += " " + char;
         }
+        if (event.keyCode === 13) { // Enter key
+          let text = document.querySelector(".text");
+          text.value += "\n";
+        } else if (event.keyCode === 9) { // Tab key
+          event.preventDefault();
+          text.value += "\t";
+        } 
       }
     });
 
@@ -184,9 +191,17 @@ function createKeyboard() {
         if (activeKey) {
           activeKey.classList.add('active');
         }
-        let char = key.textContent;
+        let char = activeKey.textContent;
         let text = document.querySelector(".text");
         text.value+=char;
+        if (event.keyCode === 13) { // Enter key
+          let text = document.querySelector(".text");
+          text.value += "\n";
+        }
+        if (event.keyCode === 9) { // Tab key
+          event.preventDefault();
+          text.value += "\t";
+        }
     });
     
     document.addEventListener('keyup', function(event) {
