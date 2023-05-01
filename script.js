@@ -210,7 +210,7 @@ function createTextarea (){
     let shortcard = document.createElement("div");
     shortcard.classList.add('legend');
     shortcard.textContent = "Для переключения языка используйте Ctrl + Shift";
-    body.insertBefore(shortcard, text);
+    body.insertBefore(shortcard, text); 
 }
 
 createTextarea ();
