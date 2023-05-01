@@ -47,6 +47,7 @@ body {
     justify-content: center;
     flex-direction: column;
     font-size: 15px;
+    transition: all 0.3s;
 }
 
 .key-item:hover{
@@ -55,6 +56,7 @@ body {
 
 .active {
     background-color: #e09132;
+    transform: translateY(4px);
 }
 
 .key-item_wide{
